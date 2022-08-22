@@ -1,5 +1,8 @@
 package Tests;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,23 +16,30 @@ public class Basketball {
     private String winner;
     private int teamOne = 0, teamTwo = 0;
     public Basketball() throws IOException {
-        String line = Files.readString(Path.of(stand.pathInput.toUri()));
-        StringTokenizer separation = new StringTokenizer(line, " ");
-        while (separation.hasMoreTokens())
-            list.add(String.valueOf(separation.nextToken()));
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i).trim();
-            System.out.println("noSpace" + list.get(i) + "noSpace");
+        File f = new File(stand.pathInput.toUri());
+        FileReader fileReader = new FileReader(f);
+        BufferedReader reader = new BufferedReader(fileReader);
+        String line = reader.readLine();
+        while (line != null) {
+            list.add(line);
+            line = reader.readLine();
+        }
+        for (String st: list) {
+            StringTokenizer separation = new StringTokenizer(st, " ");
+            while (separation.hasMoreElements())
+                score.add(Integer.valueOf(separation.nextToken()));
         }
 
-        /*for (String st: list)
-            System.out.println("noSpace" + st + "noSpace");
-        for (String st: list) {
-            StringTokenizer separationTwo = new StringTokenizer(st, " ");
-            while (separationTwo.hasMoreElements()) {
-                score.add(Integer.valueOf(separationTwo.nextToken()));
-                System.out.print(String.valueOf(separationTwo.nextToken()));
-            }
-        }*/
+        for (int i = 0; i < score.size(); i++) {
+            if (i%2 == 0)
+                teamOne += score.get(i);
+            else
+                teamTwo += score.get(i);
+        }
+        winner = (teamOne > teamTwo) ? "1" :
+                (teamTwo > teamOne) ? "2" : "DRAW";
+
+        stand.appEndToFile(winner);
+        stand.printOutput();
     }
 }
