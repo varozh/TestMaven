@@ -14,6 +14,6 @@ public class Main {
         Multiplication multi = new Multiplication();
         Bandits bandits = new Bandits();
         Salary salary = new Salary();*/
-
+        Basketball basketball = new Basketball();
     }
 }
