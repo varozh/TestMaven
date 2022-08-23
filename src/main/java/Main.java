@@ -13,7 +13,9 @@ public class Main {
         OutputFile outputFile = new OutputFile();
         Multiplication multi = new Multiplication();
         Bandits bandits = new Bandits();
-        Salary salary = new Salary();*/
+        Salary salary = new Salary();
         Basketball basketball = new Basketball();
+        BinaryNumbers binar = new BinaryNumbers();*/
+
     }
 }
