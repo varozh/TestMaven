@@ -12,6 +12,7 @@ public class CharCounter {
     private StandartTasks stand = new StandartTasks();
     private Map<String, Integer> list = new HashMap<>();
     private ArrayList<String> charList = new ArrayList<>();
+    private double avg;
 
     public CharCounter () throws IOException {
         String line = Files.readString(Path.of(stand.pathInput.toUri()));
@@ -20,8 +21,22 @@ public class CharCounter {
             charList.add(String.valueOf(separation.nextToken()));
         System.out.println(charList);
 
-        for (int i = 0; i < charList.size(); i++) {
+        for (String st: charList) {
+            if (list.containsKey(st)) {
+                int count = list.get(st);
+                list.put(st, count + 1);
+            }
+            else
+                list.put(st, 1);
+        }
+        System.out.println(list);
 
+        avg = (double) charList.size()/ list.size();
+        int min = (int) Math.floor(avg), max = (int) Math.ceil(avg);
+
+        for (Map.Entry<String, Integer> i: list.entrySet()) {
+            if (i.getValue() == min || i.getValue() == max)
+                System.out.print(i + " ");
         }
     }
 

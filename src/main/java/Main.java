@@ -17,6 +17,5 @@ public class Main {
         Basketball basketball = new Basketball();
         BinaryNumbers binar = new BinaryNumbers();*/
         CharCounter charcount = new CharCounter();
-
     }
 }
