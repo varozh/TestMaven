@@ -35,7 +35,7 @@ public class CharCounter {
         int min = (int) Math.floor(avg), max = (int) Math.ceil(avg);
 
         for (Map.Entry<String, Integer> i: list.entrySet()) {
-            if (i.getValue() == min || i.getValue() == max)
+            if (i.getValue() == min || i.getValue() == max || i.getValue() == avg)
                 System.out.print(i + " ");
         }
     }
