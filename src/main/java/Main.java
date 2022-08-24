@@ -16,6 +16,7 @@ public class Main {
         Salary salary = new Salary();
         Basketball basketball = new Basketball();
         BinaryNumbers binar = new BinaryNumbers();*/
+        CharCounter charcount = new CharCounter();
 
     }
 }
