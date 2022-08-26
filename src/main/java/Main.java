@@ -15,7 +15,9 @@ public class Main {
         Bandits bandits = new Bandits();
         Salary salary = new Salary();
         Basketball basketball = new Basketball();
-        BinaryNumbers binar = new BinaryNumbers();*/
+        BinaryNumbers binar = new BinaryNumbers();
         CharCounter charcount = new CharCounter();
+        SortBubble sortBubble = new SortBubble();*/
+        SortSelection sortSelection = new SortSelection();
     }
 }
