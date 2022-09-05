@@ -17,7 +17,7 @@ public class BinaryNumbers {
         if (number <= 0)
             conclusion = "no";
         while (number > 1) {
-            if (number %2 == 0)
+            if (number % 2 == 0)
                 number /= 2;
             else {
                 conclusion = "no";

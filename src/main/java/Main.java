@@ -17,7 +17,10 @@ public class Main {
         Basketball basketball = new Basketball();
         BinaryNumbers binar = new BinaryNumbers();
         CharCounter charcount = new CharCounter();
-        SortBubble sortBubble = new SortBubble();*/
+        SortBubble sortBubble = new SortBubble();
         SortSelection sortSelection = new SortSelection();
+        Coin coin = new Coin();
+        CointTwo cointTwo = new CointTwo();*/
+
     }
 }

@@ -13,8 +13,8 @@ public class StandartTasks {
     public Scanner num = new Scanner(System.in);
     public Path pathInput = Path.of("src/main/resources/input.txt");
     public Path pathOutput = Path.of("src/main/resources/output.txt");
-    private int fromArray = 5;
-    private int toArray = 15;
+    private int fromArray = 0;
+    private int toArray = 1;
     private File fileOutput = new File(pathOutput.toUri());
 
     public int sizeArray() {
